@@ -26,7 +26,9 @@ const assertArraysEqual = function(arr1, arr2) {
 const middle = function(param){
   let newArr = [];
   let half = 0;
-  
+    if((param.length === 1) || (param.length === 2)){
+      console.log(newArr = []);
+    }
     if(param.length % 2 === 0){
       //divide the array in half
       half = param.length/2;
@@ -41,7 +43,8 @@ const middle = function(param){
   return newArr;
 };
 
-(middle([1, 2, 3, 4]));
-(middle([1, 2, 3]));
+console.log(middle([1, 2, 3, 4]));
+console.log(middle([1, 2, 3]));
+console.log(middle([1]));
 
 assertArraysEqual((middle([1, 2, 3, 4])), ([2, 3]));
