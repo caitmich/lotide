@@ -1,18 +1,25 @@
+
+
 //eqArrays:
-const eqArrays = function(num1, num2){
-  if(num1 === num2){
-    return true;
-  } else if(num1 !== num2){
+const eqArrays = function(arr1, arr2){
+  if(arr1.length !== arr2.length){
     return false;
   }
-};
+  for(let i = 0; i < arr1.length; i++){
+    if(arr1[i] !== arr2[i]){
+      return false;
+    }
+    return true;
+  }
+}
+
 
 //assertArraysEqual:
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected) === true) {
+const assertArraysEqual = function(arr1, arr2) {
+  if ((eqArrays(arr1, arr2)) === true) {
     console.log('✅✅✅ Assertion Passed!');
   }
-  if (eqArrays(actual, expected) === false) {
+  if ((eqArrays(arr1, arr2)) === false) {
     console.log('🆘🆘🆘 Assertion Failed');
   }
 };
@@ -28,12 +35,7 @@ function without(source, itemsToRemove){
   console.log(output);
 };
 
-//without([3, 2, 1, 6, 5], 2);
 
 const words = ["hello", "world", "lighthouse"];
-without(words, "lighthouse"); 
 
-// Make sure the original array was not altered by the without function, using the assertArraysEqual func:
-
-
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+console.log(assertArraysEqual(without(words, 'world'), ['hello', 'lighthouse']));
