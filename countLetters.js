@@ -23,5 +23,7 @@ const countLetters = function(words){
   }
   return results;
 };
-console.log(countLetters('caitlin'));
+console.log(countLetters('caitlin', ));
 console.log(countLetters('lighthouse labs'));
+console.log(countLetters('LHL'));
+assertEqual((countLetters('LHL')).L,2);
