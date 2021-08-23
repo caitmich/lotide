@@ -1,33 +1,11 @@
-//eqArrays:
-const eqArrays = function(arr1, arr2){
-  if(arr1.length !== arr2.length){
-    return false;
-  }
-  for(let i = 0; i < arr1.length; i++){
-    if(arr1[i] !== arr2[i]){
-      return false;
-    }
-    return true;
-  }
-}
 
-
-//assertArraysEqual:
-const assertArraysEqual = function(arr1, arr2) {
-  if ((eqArrays(arr1, arr2)) === true) {
-    console.log('✅✅✅ Assertion Passed!');
-  }
-  if ((eqArrays(arr1, arr2)) === false) {
-    console.log('🆘🆘🆘 Assertion Failed');
-  }
-};
 
 //middle function:
 const middle = function(param){
   let newArr = [];
   let half = 0;
     if((param.length === 1) || (param.length === 2)){
-      console.log(newArr = []);
+      return newArr = [ ];
     }
     if(param.length % 2 === 0){
       //divide the array in half
@@ -43,8 +21,4 @@ const middle = function(param){
   return newArr;
 };
 
-console.log(middle([1, 2, 3, 4]));
-console.log(middle([1, 2, 3]));
-console.log(middle([1]));
-
-assertArraysEqual((middle([1, 2, 3, 4])), ([2, 3]));
+module.exports = middle;
