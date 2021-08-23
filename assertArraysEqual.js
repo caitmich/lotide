@@ -1,21 +1,14 @@
-//eqArrays code:
-const eqArrays = function(num1, num2){
-  if(num1 === num2){
-    return true;
-  } else if(num1 !== num2){
-    return false;
-  }
-};
+const eqArrays = require('./eqArrays');
 
 
-//New function based on assertEqual func:
-const assertArraysEqual = function(bool) {
-  if (bool === true) {
+const assertArraysEqual = function(eqArrays) {
+  if (eqArrays === true) {
     console.log('✅✅✅ Assertion Passed!');
   }
-  if (bool === false) {
+  if (eqArrays === false) {
     console.log('🆘🆘🆘 Assertion Failed');
   }
 };
 
-assertArraysEqual(eqArrays(3, 3));
+
+module.exports = assertArraysEqual;
